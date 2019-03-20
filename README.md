@@ -24,3 +24,6 @@ Dataset: Machine Learning by Andrew Ng, Week 7 Assignment
 
 ### Decision Boundary for C = 100
 ![](Decision_Boundary(c=100).png)
+
+
+SVM Decision Boundary is shifted because of outliers at higher value of C as depicted in above images of Decision Boundaries at C=1 and C=100
