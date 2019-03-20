@@ -16,10 +16,12 @@ m = y_data.shape[0]
 
 
 plt.scatter(x=x_data[:,0],y=x_data[:,1],c=y_data)
+plt.xlabel('x1')
+plt.ylabel('x2')
 plt.show()
 
 C = 1
-
+slope = -1
 weights = np.array([0,0])
 bias = 0
 
@@ -51,6 +53,8 @@ def learn(weights, bias, y_data, x_data, learning_rate=0.0005, num_iterations = 
         weights = weights - learning_rate*dw
         losses.append(loss(weights,bias,x_data,y_data))
     plt.clf()
+    plt.xlabel('Number of Iterations (C='+str(C)+')')
+    plt.ylabel('Loss')
     plt.plot(range(num_iterations),losses)
     plt.show()
     return {'weights':weights,
@@ -62,6 +66,8 @@ plt.clf()
 x = np.linspace(0,4,50)
 y = -1*(results['weights'][0]*x+results['bias'])/(results['weights'][1])
 plt.plot(x,y)
+plt.xlabel('x1')
+plt.ylabel('x2')
 plt.scatter(x=x_data[:,0],y=x_data[:,1],c=y_data)
 plt.show()
 
@@ -71,6 +77,8 @@ plt.clf()
 x = np.linspace(0,4,50)
 y = -1*(results['weights'][0]*x+results['bias'])/(results['weights'][1])
 plt.plot(x,y)
+plt.xlabel('x1')
+plt.ylabel('x2')
 plt.scatter(x=x_data[:,0],y=x_data[:,1],c=y_data)
 plt.show()
 
